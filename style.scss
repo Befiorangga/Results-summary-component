@@ -1,0 +1,254 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  @mixin mobile {
+    @media screen and (max-width: 426px) {
+      @content;
+    }
+  }
+
+  :root {
+
+    --Light-red: hsl(0, 100%, 67%);
+    --Light-red-bg: hsla(0, 100%, 67%, .1);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Orangey-yellow-bg: hsl(39, 100%, 56%, .1);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Green-teal-bg: hsl(166, 100%, 37%, .1);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    --Cobalt-blue-bg: hsl(234, 85%, 45%, .1);
+    
+    --Light-slate-blue : hsl(252, 100%, 67%);
+    --Light-royal-blue : hsl(241, 81%, 54%);
+    
+    --Violet-blue: hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+    
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+    --Dark-gray-blue-bg: hsla(224, 30%, 27%, .4);
+
+    --fs-2: clamp(0.78rem, calc(0.75rem + 0.17vw), 0.88rem);
+    --fs-1: clamp(0.94rem, calc(0.88rem + 0.28vw), 1.10rem);
+    --fs0: clamp(1.13rem, calc(1.04rem + 0.43vw), 1.38rem);
+    --fs1: clamp(1.35rem, calc(1.22rem + 0.64vw), 1.72rem);
+    --fs2: clamp(1.62rem, calc(1.44rem + 0.92vw), 2.15rem);
+    --fs3: clamp(1.94rem, calc(1.69rem + 1.29vw), 2.69rem);
+    --fs4: clamp(2.33rem, calc(1.98rem + 1.78vw), 3.36rem);
+    --fs5: clamp(2.80rem, calc(2.31rem + 2.43vw), 4.20rem);
+
+    --gradient: linear-gradient(to bottom, #7957FF, #2E2BE9) ;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    height: 100vh;
+    background-color: var(--White);
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+
+  .container {
+    display: flex;
+    box-shadow: 12px 20px 39px 12px rgb(200 199 255 / 50%);
+    border-radius: 2rem;
+
+    @include mobile {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0;
+    }
+  }
+
+  header {
+    color: var(--White);
+    & .wrapper-top {
+      background-color: var(--Light-slate-blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--fs3);
+      background: linear-gradient(180deg, #7957FF, #2E2BE9);
+      border-radius: 2rem;
+
+      @include mobile {
+        padding: var(--fs3);
+        border-radius: 0 0 2rem 2rem;
+      }
+
+      & h3 {
+        font-size: var(--fs0);
+        font-weight: 500;
+        color: var(--Light-lavender);
+
+        @include mobile {
+          font-size: var(--fs-1);
+        }
+      }
+
+      & .result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2.6rem;
+        margin: 2rem;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        justify-content: center;
+        background: -webkit-linear-gradient(top, rgba(49, 60, 90, .5), rgba(46, 43, 233, .2));
+        
+        @include mobile {
+          margin: 1rem;
+          padding: 2rem;
+          width: 120px;
+          height: 120px;
+        }
+
+        & .score-a {
+          font-size: var(--fs5);
+          font-weight: 800;
+          color: var(--White);
+
+          @include mobile {
+            font-size: var(--fs5);
+          }
+        }
+        & .score-b {
+          font-weight: 500;
+          color: var(--Light-lavender);
+
+          @include mobile {
+            font-size: var(--fs-2);
+          }
+        }
+      }
+
+      & .caption-a {
+        font-weight: 700;
+        font-size: var(--fs1);
+      }
+
+      & .caption-b {
+        font-size: 16px;
+        width: 260px;
+        text-align: center;
+        padding: 1rem;
+        color: var(--Light-lavender);
+
+        @include mobile {
+          padding: 1rem;
+          font-size: var(--fs-2);
+        }
+      }
+    }
+  }
+
+ 
+  .wrapper {
+      flex-direction: column;
+      font-size: var(--fs0);
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-radius: 0 2rem 2rem 0;
+
+      @include mobile {
+        padding: 1rem;
+      }
+
+      & h3 {
+        padding-bottom: 1rem;
+        color: var(--Dark-gray-blue);
+      }
+
+      & .wrapper-list {
+        display: flex;
+        flex-direction: column;
+
+        & .list {
+
+          & .link-list {
+            padding: 1rem 1rem;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 5rem;
+            font-size: var(--fs-1);
+            border-radius: .6rem;
+            font-weight: 500;
+
+            &.link-list:nth-of-type(1) {
+              background-color: var(--Light-red-bg);
+              color: var(--Light-red);
+            }
+            &.link-list:nth-of-type(2) {
+              background-color: var(--Orangey-yellow-bg);
+              color: var(--Orangey-yellow);
+            }
+            &.link-list:nth-of-type(3) {
+              background-color: var(--Green-teal-bg);
+              color: var(--Green-teal);
+            }
+            &.link-list:nth-of-type(4) {
+              background-color: var(--Cobalt-blue-bg);
+              color: var(--Cobalt-blue);
+            }
+
+            & .list-data {
+              display: flex;
+              align-items: center; 
+
+              & span {
+                display: grid;
+                place-items: center;
+                padding: 0 .4rem;
+              }
+            }
+
+            & .list-score {
+              color: var(--Dark-gray-blue);
+              font-weight: 700;
+
+              & .a {
+                color: var(--Dark-gray-blue-bg)
+              }
+            }
+          }
+        }
+
+        & button {
+          border: none;
+          font-size: var(--fs-1);
+          font-weight: 500;
+          color: var(--White);
+          background: var(--Dark-gray-blue);
+          padding: 1rem;
+          border-radius: 4rem;
+          margin-top: 1rem;
+          cursor: pointer;
+
+          &:is(:hover, :focus){
+            background: var(--gradient);
+          }
+        }
+      }
+    }
+  
