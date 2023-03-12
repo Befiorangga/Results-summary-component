@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []
-- Live Site URL: []
+- Solution URL: [https://github.com/Befiorangga/Results-summary-component]
+- Live Site URL: [https://befiorangga.github.io/Results-summary-component/]
 
 ## My process
 
