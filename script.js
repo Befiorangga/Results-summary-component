@@ -9,7 +9,7 @@ fetch("data.json")
          out += `
             <div class="link-list">
                <div class="list-data">
-                  <span><img src='${list.icon}'></span>
+                  <span><img src='${list.icon}' alt='icon'></span>
                   <span>${list.category}</span>
                </div>
                <div class="list-score">
